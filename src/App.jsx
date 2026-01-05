@@ -279,8 +279,10 @@ function App() {
           <div className="contato-conteudo">
             <div className="contato-lado-esquerdo">
               <div className="contato-botoes">
-                {/* Mantenha seus botões de redes, mas aqui você pode adicionar um texto de apoio */}
-                <p style={{ marginBottom: "20px", opacity: 0.7 }}>
+                <p
+                  className="text_contato"
+                  style={{ marginBottom: "20px", opacity: 0.7 }}
+                >
                   Disponível para novos projetos e consultorias.
                 </p>
                 <a

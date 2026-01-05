@@ -142,6 +142,11 @@ header {
   .hamburger {
     display: inline-flex;
   }
+
+  .logomarca {
+    min-height: 30px;
+    min-width: 60px;
+  }
 }
 
 /* Pequenos ajustes para header em telas muito pequenas */
@@ -151,6 +156,10 @@ header {
   }
   header {
     height: 60px;
+  }
+  .logomarca {
+    max-height: 15px;
+    max-width: 35px;
   }
 }
 
@@ -497,6 +506,8 @@ header {
 }
 
 .btn-contato {
+  width: 30vw;
+  justify-content: center;
   display: inline-flex; /* largura baseada no conteúdo */
   align-items: center;
   gap: 10px;
@@ -509,8 +520,6 @@ header {
   font-weight: bold;
   font-size: 0.95rem;
   white-space: nowrap;
-  /* largura uniforme baseada no maior botão + 15px (definida via JS) */
-  min-width: var(--btn-contato-width, auto);
   transition: width 0.2s ease, transform 0.25s ease;
 }
 
@@ -712,71 +721,83 @@ header {
     justify-content: center;
     gap: 24px;
   }
-}
-@media (max-width: 700px) {
-  .container-cards-principais {
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-  }
-  .projetos {
-    width: 92%;
-    max-width: 420px;
-    height: auto;
-    padding: 22px;
-  }
-  .projetos img {
-    width: 100px;
-    height: 100px;
-  }
-  .projetos h3 {
-    font-size: 1.1rem;
-  }
-  .btn_ver_mais {
-    padding: 12px;
-    border-radius: 14px;
-  }
-}
 
-/* Detalhes expandidos e mini-cards — empilha em telas menores */
-@media (max-width: 900px) {
-  .detalhes-expandidos {
-    padding: 40px 18px;
-    margin: 0 6%;
+  /* Detalhes expandidos e mini-cards — empilha em telas menores */
+  @media (max-width: 900px) {
+    .detalhes-expandidos {
+      padding: 40px 18px;
+      margin: 0 6%;
+    }
+    .grid-detalhes {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .card-interno {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      min-height: 320px;
+    }
+    .card-interno-img-wrapper {
+      height: 160px;
+    }
   }
-  .grid-detalhes {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  }
-  .card-interno {
-    width: 100%;
-    max-width: 420px;
-    height: auto;
-    min-height: 320px;
-  }
-  .card-interno-img-wrapper {
-    height: 160px;
-  }
-}
 
-/* Contato — empilha e ajusta botões para mobile (com mais 'respiro') */
-@media (max-width: 900px) {
-  .contato-conteudo {
-    grid-template-columns: 1fr;
-    gap: 48px; /* mais espaço vertical para não ficar esmagado */
+  /* Contato — empilha e ajusta botões para mobile (com mais 'respiro') */
+  @media (max-width: 900px) {
+    .contato-conteudo {
+      grid-template-columns: 1fr;
+      gap: 48px; /* mais espaço vertical para não ficar esmagado */
+    }
+    .contato-lado-esquerdo {
+      display: flex;
+      flex-direction: column;
+    }
+    .contato-lado-direito {
+      width: 100%;
+      flex: none;
+    }
   }
-  .contato-lado-esquerdo,
-  .contato-lado-direito {
-    width: 100%;
-    flex: none;
+
+  @media (max-width: 700px) {
+    .detalhes-expandidos {
+      padding: 40px 18px;
+      font-size: 0.7rem;
+    }
+
+    .container-cards-principais {
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+    .projetos {
+      width: 92%;
+      max-width: 420px;
+      min-height: 350px;
+      height: auto;
+      padding: 22px;
+    }
+    .projetos img {
+      width: 150px;
+      height: 150px;
+    }
+    .projetos h3 {
+      font-size: 1.1rem;
+    }
+    .btn_ver_mais {
+      padding: 12px;
+      border-radius: 14px;
+    }
   }
+
   .contato-botoes {
     flex-direction: row;
     gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .btn-enviar {
     width: 100%;
     align-self: stretch;
@@ -820,10 +841,11 @@ header {
   .container-sobre-fluido {
     padding: 36px 6%;
     border-radius: 28px;
+    width: 90%;
   }
   .container-sobre-fluido p {
     margin-bottom: 20px;
-    max-width: 100%;
+    max-width: 92%;
   }
 }
 @media (max-width: 480px) {
@@ -832,6 +854,7 @@ header {
   }
   .container-sobre-fluido {
     padding: 28px 6%;
+    width: 90%;
   }
   .skills-grid {
     gap: 10px;
