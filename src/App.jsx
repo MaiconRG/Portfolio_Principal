@@ -91,7 +91,7 @@ function App() {
   const obterDados = () => {
     if (secaoAtiva === "projetos") return dadosProjetos;
     if (secaoAtiva === "certificados") return dadosCertificados;
-    if (secaoAtiva === "design") return dadosDesign;
+    if (secaoAtiva === "visuais") return dadosDesign;
     return [];
   };
 
@@ -112,12 +112,25 @@ function App() {
     };
   }, [menuOpen]);
 
+  const SUBTITULOS_SECAO = {
+    projetos:
+      "Projetos desenvolvidos com foco em funcionalidade, organização de código e experiência do usuário.",
+    certificados:
+      "Certificações que representam minha base técnica e o processo contínuo de aprendizado na área de tecnologia.",
+    visuais:
+      "Produções visuais desenvolvidas como complemento a projetos digitais e interfaces web.",
+  };
+
   return (
     <main>
       <header>
         <div className="header-inner">
           <div className="brand" aria-hidden>
-            <h3 style={{ margin: 0 }}>MAICON</h3>
+            <img
+              className="logomarca"
+              src="logo-s.png"
+              alt="Logo marca MR Gretschmann"
+            />
           </div>
 
           <nav id="links">
@@ -171,9 +184,9 @@ function App() {
           <h4>OLÁ, EU SOU</h4>
           <h1>MAICON GRETSCHMANN</h1>
           <p>
-            Desenvolvedor web especialista em front-end e na aplicação de
-            inteligência artificial para otimizar processos e melhorar
-            funcionalidades.
+            Desenvolvedor Front-end com base em sistemas e compreensão de
+            back-end <br /> Crio interfaces focadas em experiência do usuário,
+            unindo desenvolvimento web, visão técnica e comunicação clara.
           </p>
         </div>
       </section>
@@ -186,14 +199,14 @@ function App() {
             acao={() => abrirSecao("projetos")}
           />
           <ProjectCard
-            titulo="CERTIFICAÇÃO"
+            titulo="CERTIFICAÇÕES"
             imagem="CERTIFICACAO.png"
             acao={() => abrirSecao("certificados")}
           />
           <ProjectCard
-            titulo="DESIGN"
+            titulo="VISUAIS"
             imagem="DESING.png"
-            acao={() => abrirSecao("design")}
+            acao={() => abrirSecao("visuais")}
           />
         </div>
       </section>
@@ -202,7 +215,9 @@ function App() {
       <div id="detalhes-container">
         {secaoAtiva && (
           <section className="detalhes-expandidos revelar">
-            <h2>{secaoAtiva.toUpperCase()}</h2>
+            <h2 className="subtitulo_detalhes-expandidos">
+              {SUBTITULOS_SECAO[secaoAtiva]}
+            </h2>
             <div className="grid-detalhes">
               {obterDados().map((item) => (
                 <ItemDetalhe
@@ -226,17 +241,27 @@ function App() {
         <div className="container-sobre-fluido">
           <h2>SOBRE MIM</h2>
           <p>
-            Com foco em arquitetura de software e experiência do usuário, minha
-            trajetória é pautada na criação de soluções digitais robustas.
-            Especialista em React e ecossistemas JavaScript, transformo desafios
-            complexos em interfaces intuitivas e de alta performance.
+            Sou profissional da área de Tecnologia, formado em Sistemas para
+            Internet, com experiência em suporte técnico a sistemas e
+            atendimento ao usuário em empresa de software. Ao longo da minha
+            trajetória, atuei com alto volume de atendimentos, foco em
+            qualidade, alinhamento de expectativas e comunicação clara, sendo
+            reconhecido pela liderança pelo comprometimento e profissionalismo.
+            Essa vivência fortaleceu minha visão sobre como sistemas impactam
+            diretamente a experiência do usuário. Hoje, direciono meu
+            desenvolvimento para o Front-end, aplicando conhecimentos em HTML,
+            CSS e JavaScript na criação de interfaces funcionais, acessíveis e
+            bem estruturadas, buscando sempre unir usabilidade, desempenho e
+            clareza técnica.
           </p>
 
           <div className="skills-grid">
             <span className="skill-tag">React.js</span>
-            <span className="skill-tag">Inteligência Artificial</span>
-            <span className="skill-tag">UI/UX Design</span>
+            <span className="skill-tag">JavaScript</span>
             <span className="skill-tag">Node.js</span>
+            <span className="skill-tag">HTML</span>
+            <span className="skill-tag">CSS</span>
+            <span className="skill-tag">Usabilidade</span>
             <span className="skill-tag">Clean Code</span>
           </div>
         </div>

@@ -53,10 +53,15 @@ header {
   align-items: center;
   justify-content: space-between; /* Marca à esquerda, links centralizados, hamburger à direita */
 }
-.brand h3 {
-  color: var(--cor-titulos);
-  font-size: 1rem;
-  letter-spacing: 1px;
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logomarca {
+  width: 8vw;
+  height: 8vh;
 }
 
 #links {
@@ -272,8 +277,10 @@ header {
 }
 .detalhes-expandidos h2 {
   margin-bottom: 60px;
-  color: var(--cor-destaque);
+  color: var(--cor-texto);
   letter-spacing: 3px;
+  text-align: center;
+  padding: 0 8vw;
 }
 .grid-detalhes {
   display: flex;
@@ -327,19 +334,20 @@ header {
   color: var(--cor-texto);
   opacity: 0.85;
   margin: 0 0 12px 0;
+  font-size: 0.7rem;
   overflow: auto; /* se a descrição for longa, permite rolagem apenas nela */
 }
 .link-projeto {
-  margin-top: auto; /* empurra o link para o fim do card */
+  margin-top: 800px; /* empurra o link para o fim do card */
   display: inline-flex;
   align-items: center;
-  color: #ffffff !important;
+  color: var(--cor-texto);
   font-weight: bold !important;
   text-decoration: none !important;
   border-bottom: 2px solid var(--cor-destaque) !important;
   margin-top: 12px;
   margin-bottom: 14px; /* evita encostar na borda inferior do card */
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   padding-bottom: 2px;
 }
 
@@ -392,6 +400,7 @@ header {
   font-size: 2.2rem; /* escala reduzida */
   margin-bottom: 20px;
   background: linear-gradient(to right, #fff, var(--cor-destaque));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
