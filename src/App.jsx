@@ -229,9 +229,14 @@ function App() {
                 />
               ))}
             </div>
-            <button className="btn-fechar" onClick={() => setSecaoAtiva(null)}>
-              FECHAR
-            </button>
+            <a href="#projetos">
+              <button
+                className="btn-fechar"
+                onClick={() => setSecaoAtiva(null)}
+              >
+                FECHAR
+              </button>
+            </a>
           </section>
         )}
       </div>
