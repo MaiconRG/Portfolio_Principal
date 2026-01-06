@@ -128,7 +128,7 @@ function App() {
           <div className="brand" aria-hidden>
             <img
               className="logomarca"
-              src="logo-s.png"
+              src="mrg_logo.png"
               alt="Logo marca MR Gretschmann"
             />
           </div>
