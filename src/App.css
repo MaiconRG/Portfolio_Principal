@@ -697,6 +697,9 @@ header {
   }
 }
 @media (max-width: 480px) {
+  .texto-apresentacao h4 {
+    padding: 3vh;
+  }
   #conteudo {
     padding: 20px 6%;
     gap: 18px;
